@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" >مشق کریں۔</string>
+    <string name="customers" >گاہکوں</string>
+    <string name="add_customer" >کسٹمر شامل کریں۔</string>
+    <string name="name">نام</string>
+    <string name="email">ای میل</string>
+    <string name="password">پاس ورڈ</string>
+    <string name="phone">فون</string>
+    <string name="contacts">رابطے</string>
+    <string name="add_contact">رابطہ شامل کریں۔</string>
+    <string name="first_name">پہلا نام</string>
+    <string name="last_name">آخری نام</string>
+    <string name="type_of_contact">رابطے کی قسم</string>
+</resources>

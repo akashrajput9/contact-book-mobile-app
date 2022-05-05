@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#eee"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="@string/add_contact"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/first_name"
+        android:id="@+id/firstName"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:autofillHints="name"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lastName"
+        android:hint="@string/last_name"
+        android:minHeight="48dp"
+        android:autofillHints="last name"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/phone"
+        android:id="@+id/phone"
+        android:inputType="phone"
+        android:minHeight="48dp"
+        android:autofillHints="phone"/>
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:autofillHints="emailAddress"/>
+
+    <EditText
+        android:id="@+id/typeOfContact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/type_of_contact"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:autofillHints="Type of contact"/>
+
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_customer"
+        android:layout_marginTop="20dp"
+        android:id="@+id/btnAddCustomer"
+        />
+
+
+</LinearLayout>
