@@ -21,8 +21,11 @@ class ContactAdapter(val contacts: ArrayList<Contact>): RecyclerView.Adapter<Con
     override fun onBindViewHolder(p0: ContactViewHolder, p1: Int) {
         val currentCustomer = contacts[p1];
         p0.itemView.apply {
-            p0.itemView.findViewById<TextView>(R.id.lFisrtName).setText(currentCustomer.first_name) ;
-            p0.itemView.findViewById<TextView>(R.id.lPhone).setText(currentCustomer.phone);
+            p0.itemView.findViewById<TextView>(R.id.lFisrtName).setText(currentCustomer.first_name)
+            p0.itemView.findViewById<TextView>(R.id.lLastName).setText(currentCustomer.last_name)
+            p0.itemView.findViewById<TextView>(R.id.lPhone).setText(currentCustomer.phone)
+            p0.itemView.findViewById<TextView>(R.id.lEmail).setText(currentCustomer.email)
+            p0.itemView.findViewById<TextView>(R.id.lType).setText(currentCustomer.type_of_contact)
         }
     }
 
