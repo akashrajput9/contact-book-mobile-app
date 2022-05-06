@@ -8,16 +8,52 @@
     android:orientation="vertical"
     android:padding="20dp">
 
-<TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/contact_list"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:textAlignment="center"
-        android:paddingTop="13dp"
-        android:paddingBottom="13dp"
-        />
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/contact_list"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:paddingTop="13dp"
+            android:paddingBottom="13dp"
+            />
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/toggleButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                >
+                <Button
+                    android:id="@+id/allBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="All"
+                    style="?attr/materialButtonOutlinedStyle"
+                    />
+                <Button
+                    android:id="@+id/familyBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Family"
+                    style="?attr/materialButtonOutlinedStyle"
+                    />
+                <Button
+                    android:id="@+id/friendsBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Friends"
+                    style="?attr/materialButtonOutlinedStyle"
+                    />
+                <Button
+                    android:id="@+id/otherBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Other"
+                    style="?attr/materialButtonOutlinedStyle"
+                    />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
