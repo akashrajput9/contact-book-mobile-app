@@ -4,6 +4,9 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.practice.AddContactActivity
+import com.example.practice.MainActivity
+import com.example.practice.adapter.ContactAdapter
 import com.example.practice.models.Contact
 import com.example.practice.models.ContactDao
 
@@ -22,6 +25,7 @@ abstract class AppDatabase: RoomDatabase() {
                 instance
             }
         }
+
     }
 
 }

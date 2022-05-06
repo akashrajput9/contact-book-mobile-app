@@ -2,11 +2,9 @@ package com.example.practice
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.practice.adapter.ContactAdapter
 import com.example.practice.db.AppDatabase
@@ -41,9 +39,6 @@ class MainActivity : AppCompatActivity() {
 
         val viewContactsBtn = findViewById<Button>(R.id.viewContactsBtn)
         viewContactsBtn.setOnClickListener(View.OnClickListener {
-            Toast.makeText(this,"hello",Toast.LENGTH_SHORT).show();
-//            val viewContactIntent = Intent(this,ActivityViewContacts::class.java);
-//            startActivity(viewContactIntent)
             val viewContactIntent: Intent = Intent(this,ViewContactsActivity::class.java)
             startActivity(viewContactIntent)
         })

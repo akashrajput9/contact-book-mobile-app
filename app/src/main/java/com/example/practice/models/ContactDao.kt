@@ -1,9 +1,6 @@
 package com.example.practice.models
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -16,8 +13,9 @@ interface ContactDao {
 
 
     @Query("SELECT * FROM contacts WHERE type_of_contact LIKE :searchQuery")
-    // and then search query will be passed through
-    // the perimeter of this function
-    // and then function will return the flow of list of person
     fun searchByType(searchQuery: String): List<Contact>
+
+
+    @Delete
+    fun delete(contact:Contact)
 }

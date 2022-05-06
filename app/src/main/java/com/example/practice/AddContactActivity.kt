@@ -1,7 +1,6 @@
 package com.example.practice
 
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.*
@@ -36,16 +35,27 @@ var selectedSpinner: String = ""
 
         val btnAddContact = findViewById<Button>(R.id.insertContact)
         btnAddContact.setOnClickListener(View.OnClickListener {
-            val firstName = findViewById<EditText>(R.id.firstName).text.toString()
-            val lastName = findViewById<EditText>(R.id.lastName).text.toString()
-            val txtEmail = findViewById<EditText>(R.id.email).text.toString()
-            val txtPhone = findViewById<EditText>(R.id.phone).text.toString()
+
+            var first_name = findViewById<EditText>(R.id.firstName)
+            var last_name = findViewById<EditText>(R.id.lastName)
+            var txt_email = findViewById<EditText>(R.id.email)
+            var txt_phone = findViewById<EditText>(R.id.phone)
+
+
+            val firstName = first_name.text.toString()
+            val lastName = last_name.text.toString()
+            val txtEmail = txt_email.text.toString()
+            val txtPhone = txt_phone.text.toString()
             val typeOfContact = selectedSpinner
             if(firstName == "" || lastName == "" || txtEmail == "" || txtPhone == "" ){
                 Toast.makeText(this,"All fields are required",Toast.LENGTH_SHORT).show()
             }else{
                 AppDatabase.getInstance(this).ContactDao().insert(Contact(first_name = firstName, last_name = lastName, email = txtEmail, phone = txtPhone, type_of_contact = typeOfContact))
                 Toast.makeText(this,"Contact Added Successfully!",Toast.LENGTH_SHORT).show()
+                first_name.setText("")
+                last_name.setText("")
+                txt_email.setText("")
+                txt_phone.setText("")
             }
 
         })
@@ -63,4 +73,8 @@ var selectedSpinner: String = ""
     override fun onNothingSelected(p0: AdapterView<*>?) {
 
     }
+}
+
+private fun EditText.setText(c: Char) {
+
 }

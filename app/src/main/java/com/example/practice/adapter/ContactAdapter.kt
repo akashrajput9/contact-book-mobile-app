@@ -1,11 +1,15 @@
 package com.example.practice.adapter
 
+import android.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.practice.MainActivity
 import com.example.practice.R
+import com.example.practice.db.AppDatabase
 import com.example.practice.models.Contact
 
 
@@ -26,6 +30,13 @@ class ContactAdapter(val contacts: ArrayList<Contact>): RecyclerView.Adapter<Con
             p0.itemView.findViewById<TextView>(R.id.lPhone).setText(currentCustomer.phone)
             p0.itemView.findViewById<TextView>(R.id.lEmail).setText(currentCustomer.email)
             p0.itemView.findViewById<TextView>(R.id.lType).setText(currentCustomer.type_of_contact)
+
+            p0.itemView.findViewById<Button>(R.id.deleteBtn).setOnClickListener(View.OnClickListener {
+//                Toast.makeText(this, "Clearing the data...",
+//                    Toast.LENGTH_SHORT).show();
+
+                removeItem(p1)
+            })
         }
     }
 
@@ -33,6 +44,15 @@ class ContactAdapter(val contacts: ArrayList<Contact>): RecyclerView.Adapter<Con
         contacts.add(customer)
         this.notifyItemInserted(contacts.size-1);
     }
+    private fun removeItem(index:Int){
+//        AppDatabase.ContactDao().deleteById(index)
+        AppDatabase.getInstance(MainActivity()).ContactDao().delete(contacts[index])
+        contacts.removeAt(index)
+        notifyItemRemoved(index)
+        notifyItemRangeChanged(index, itemCount)
+    }
+
+
 
     override fun getItemCount(): Int {
         return contacts.size;
