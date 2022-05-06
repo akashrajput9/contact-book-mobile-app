@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" >مشق کریں۔</string>
+    <string name="app_name" >رابطہ کتاب</string>
     <string name="customers" >گاہکوں</string>
     <string name="add_customer" >کسٹمر شامل کریں۔</string>
     <string name="name">نام</string>
@@ -12,4 +12,6 @@
     <string name="first_name">پہلا نام</string>
     <string name="last_name">آخری نام</string>
     <string name="type_of_contact">رابطے کی قسم</string>
+    <string name="view_contacts">رابطے دیکھیں</string>
+    <string name="contact_list">رابطے کی فہرست</string>
 </resources>

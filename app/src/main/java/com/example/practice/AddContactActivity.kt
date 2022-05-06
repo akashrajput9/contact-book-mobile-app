@@ -2,51 +2,62 @@ package com.example.practice
 
 
 import android.os.Bundle
-import android.text.Html
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.practice.db.AppDatabase
 import com.example.practice.models.Contact
 
-class AddContactActivity : AppCompatActivity() {
+class AddContactActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
+
+    var contactTypes = arrayOf("Family", "Friend", "Colleague", "Others")
+
+    var spinner:Spinner? = null
+//    var textView_msg = findViewById<TextView>(R.id.selectedItem)
+var selectedSpinner: String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
 
         setContentView(R.layout.activity_add_contact)
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        val btnAddContact = findViewById(R.id.addContactBtn) as Button
-        btnAddContact.setOnClickListener(View.OnClickListener {
-            val firstName = findViewById<EditText>(R.id.firstName)
-            val first_name = firstName.text.toString()
-            val lastName = findViewById<EditText>(R.id.lastName)
-            val last_name = lastName.text.toString()
-            val txtEmail = findViewById<EditText>(R.id.email)
-            val email = txtEmail.text.toString()
-            val txtPhone = findViewById<EditText>(R.id.phone)
-            val phone = txtPhone.text.toString()
-            val typeOfContact = findViewById<EditText>(R.id.typeOfContact)
-            val typeContact = typeOfContact.text.toString()
+        spinner = this.findViewById<Spinner>(R.id.typeOfContact)
+        spinner!!.setOnItemSelectedListener(this)
 
-            if(first_name == "" || last_name == "" || email == "" || phone == "" || typeContact == ""){
-                Toast.makeText(this,Html.fromHtml("<font color='#000'>All fields are required</font>"),Toast.LENGTH_SHORT).show()
+        val aa = ArrayAdapter(this, android.R.layout.simple_spinner_item, contactTypes)
+        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner!!.setAdapter(aa)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+
+
+        val btnAddContact = findViewById<Button>(R.id.insertContact)
+        btnAddContact.setOnClickListener(View.OnClickListener {
+            val firstName = findViewById<EditText>(R.id.firstName).text.toString()
+            val lastName = findViewById<EditText>(R.id.lastName).text.toString()
+            val txtEmail = findViewById<EditText>(R.id.email).text.toString()
+            val txtPhone = findViewById<EditText>(R.id.phone).text.toString()
+            val typeOfContact = selectedSpinner
+            if(firstName == "" || lastName == "" || txtEmail == "" || txtPhone == "" ){
+                Toast.makeText(this,"All fields are required",Toast.LENGTH_SHORT).show()
             }else{
-                AppDatabase.getInstance(this).ContactDao().insert(Contact(first_name = first_name, last_name = last_name, email = email, phone = phone, type_of_contact = typeContact))
-//                val sharedPref: SharedPreferences = getSharedPreferences("MY_SHARED_PREF", Context.MODE_PRIVATE)
-//                val customersString = sharedPref.getString("customers","[]")
-//                val customers: ArrayList<Customer> =
-//                    Gson().fromJson(customersString,object: TypeToken<ArrayList<Customer>>(){}.type)
-//                val newCustomer = Customer(name,email,password,phone)
-//                customers.add(newCustomer)
-//                with (sharedPref.edit()){
-//                    putString("customers",Gson().toJson(customers))
-//                    apply()
-//                }
-                Toast.makeText(this,Html.fromHtml("<font color='#000'>Customer Added Successfully!</font>"),Toast.LENGTH_SHORT).show()
+                AppDatabase.getInstance(this).ContactDao().insert(Contact(first_name = firstName, last_name = lastName, email = txtEmail, phone = txtPhone, type_of_contact = typeOfContact))
+                Toast.makeText(this,"Contact Added Successfully!",Toast.LENGTH_SHORT).show()
             }
 
         })
+
+    }
+
+    override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+//        findViewById<TextView>(R.id.selectedItem).text = "Selected : "+languages[p2]
+//        Log.d("langual",languages[p2]);
+        this.selectedSpinner= contactTypes[p2];
+    }
+
+    override fun onNothingSelected(p0: AdapterView<*>?) {
+
     }
 }

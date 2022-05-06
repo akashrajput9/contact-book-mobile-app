@@ -5,8 +5,9 @@
       <map>
         <entry key="..\:/projects/mobileApps/android-practice-master/app/src/main/res/layout/activity_add_contact.xml" value="0.25" />
         <entry key="..\:/projects/mobileApps/android-practice-master/app/src/main/res/layout/activity_add_customer.xml" value="0.25" />
-        <entry key="..\:/projects/mobileApps/android-practice-master/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/projects/mobileApps/android-practice-master/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/projects/mobileApps/android-practice-master/app/src/main/res/layout/activity_splash.xml" value="0.25" />
+        <entry key="..\:/projects/mobileApps/android-practice-master/app/src/main/res/layout/activity_view_contacts.xml" value="0.25" />
         <entry key="..\:/projects/mobileApps/android-practice-master/app/src/main/res/layout/list_contacts.xml" value="0.25" />
         <entry key="..\:/projects/mobileApps/android-practice-master/app/src/main/res/layout/list_customers.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_add_customer.xml" value="0.3880208333333333" />

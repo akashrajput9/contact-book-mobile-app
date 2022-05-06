@@ -10,6 +10,6 @@ interface ContactDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insert(customer: Contact)
 
-    @Query("SELECT * FROM contacts ORDER BY id ASC")
+    @Query("SELECT * FROM contacts ORDER BY id DESC")
     fun getAll(): List<Contact>
 }

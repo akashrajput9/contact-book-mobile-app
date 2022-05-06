@@ -49,16 +49,19 @@
         android:minHeight="48dp"
         android:autofillHints="emailAddress"/>
 
-    <EditText
+<!--    <EditText-->
+<!--        android:id="@+id/typeOfContact"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="@string/type_of_contact"-->
+<!--        android:inputType="text"-->
+<!--        android:minHeight="48dp"-->
+<!--        android:autofillHints="Type of contact"/>-->
+
+    <Spinner
         android:id="@+id/typeOfContact"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/type_of_contact"
-        android:inputType="text"
-        android:minHeight="48dp"
-        android:autofillHints="Type of contact"/>
-
-
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 
     <Button
@@ -66,7 +69,7 @@
         android:layout_height="wrap_content"
         android:text="@string/add_customer"
         android:layout_marginTop="20dp"
-        android:id="@+id/btnAddCustomer"
+        android:id="@+id/insertContact"
         />
 
 

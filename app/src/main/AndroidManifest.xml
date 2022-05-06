@@ -20,7 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".AddCustomerActivity" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".AddContactActivity" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".ActivityViewContacts" android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>
