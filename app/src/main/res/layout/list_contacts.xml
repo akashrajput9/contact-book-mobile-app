@@ -72,15 +72,7 @@
                     />
             </LinearLayout>
 
-            <Button
-                android:id="@+id/editBtn"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:drawableLeft="@drawable/edit_icon"
-                android:backgroundTint="#1521"
-                android:textSize="2sp"
-                android:padding="5dp"
-                />
+
             <Button
                 android:id="@+id/deleteBtn"
                 android:layout_width="40dp"
