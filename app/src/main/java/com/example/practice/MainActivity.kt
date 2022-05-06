@@ -18,7 +18,6 @@ import com.google.gson.reflect.TypeToken
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("yes","here we are at main activity")
         setContentView(R.layout.activity_main)
 
 

@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:text="email@gmail.com"
             android:id="@+id/lEmail"
-
+            android:autoLink="email"
             />
         <TextView
             android:layout_width="wrap_content"

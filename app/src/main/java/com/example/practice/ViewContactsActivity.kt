@@ -3,6 +3,8 @@ package com.example.practice
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
+import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import androidx.annotation.Nullable
 import androidx.appcompat.app.AppCompatActivity
@@ -19,15 +21,51 @@ class ViewContactsActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_contacts)
 
-        val customers = AppDatabase.getInstance(this).ContactDao().getAll()
+        var buttonAll = findViewById<Button>(R.id.allBtn)
+        buttonAll.setOnClickListener(View.OnClickListener {
+            this.showContacts("All")
+        })
+
+
+        var buttonFamily = findViewById<Button>(R.id.familyBtn)
+        buttonFamily.setOnClickListener(View.OnClickListener {
+            this.showContacts("Family")
+        })
+
+        var buttonFriends = findViewById<Button>(R.id.friendsBtn)
+        buttonFriends.setOnClickListener(View.OnClickListener {
+            this.showContacts("Friends")
+        })
+
+
+        var colleagueBtn = findViewById<Button>(R.id.colleagueBtn)
+        colleagueBtn.setOnClickListener(View.OnClickListener {
+            this.showContacts("Colleague")
+        })
+
+        var buttonOther = findViewById<Button>(R.id.otherBtn)
+        buttonOther.setOnClickListener(View.OnClickListener {
+            this.showContacts("Others")
+        })
+
+
+        this.showContacts("All")
+
+
+    }
+
+    private fun showContacts(what:String){
+        var customers = AppDatabase.getInstance(this).ContactDao().getAll()
+        if(what != "All"){
+            customers = AppDatabase.getInstance(this).ContactDao().searchByType(what)
+        }
+
         val customersString = Gson().toJson(customers)
         val newCustomers: ArrayList<Contact> = Gson().fromJson(customersString,object: TypeToken<ArrayList<Contact>>(){}.type)
         val contactsAdapter = ContactAdapter(newCustomers);
-
         val rView = findViewById<RecyclerView>(R.id.rView)
         rView.adapter = contactsAdapter
         rView.layoutManager = LinearLayoutManager(this)
-
     }
 }
 
