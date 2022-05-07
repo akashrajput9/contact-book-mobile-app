@@ -31,7 +31,7 @@ class ViewContactsActivity: AppCompatActivity() {
 
         var buttonFriends = findViewById<Button>(R.id.friendsBtn)
         buttonFriends.setOnClickListener(View.OnClickListener {
-            this.showContacts("Friends")
+            this.showContacts("Friend")
         })
 
 
