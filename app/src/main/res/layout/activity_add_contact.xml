@@ -67,7 +67,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/add_customer"
+        android:text="@string/add_contact"
         android:layout_marginTop="20dp"
         android:id="@+id/insertContact"
         />
